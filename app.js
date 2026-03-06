@@ -12,7 +12,7 @@ app.use('/api/auth', authRouter)
 app.use('/api/film', filmRouter)
 
 
-app.use((req, res) => {
+app.use((_, res) => {
     res.status(404).json({
         message: "Not found"
     })

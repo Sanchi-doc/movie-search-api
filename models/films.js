@@ -11,7 +11,7 @@ const filmsDbSchema = Schema(
            type: String,
            require: [true, 'title is required']
         },
-        image: {
+        poster_path: {
             type: String,
             require: [true, 'image is required']
         },
@@ -38,7 +38,7 @@ const Film = model('film', filmsDbSchema)
 const JoiFilmSchema = Joi.object({
     id: Joi.number().required(),
     title: Joi.string().required(),
-    image: Joi.string().required(),
+    poster_path: Joi.string().required(),
     release_date: Joi.string().required(),
     vote_average: Joi.number().required()
 })

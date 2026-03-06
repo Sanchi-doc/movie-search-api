@@ -13,7 +13,7 @@ const deleteFilm = async (req, res) => {
     res.json({
         response: 'success',
         status: 200,
-        data: {filmToDalete}
+        filmToDalete
     })
 } 
 module.exports = deleteFilm
