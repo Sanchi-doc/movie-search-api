@@ -1,9 +1,11 @@
 const { Comments } = require('../../models/comments')
 
 const addComment = async (req, res) => {
-   const{body} = req
-
-   const commentToAdd = await Comments.create({...body})
+   const {body} = req
+   const {_id} = req.user
+   console.log(body,"2222212");
+   
+   const commentToAdd = await Comments.create({...body, owner: _id})
 
    res.status(201).json({
     response: 'success',
@@ -11,4 +13,4 @@ const addComment = async (req, res) => {
     commentToAdd
    })
 }
-module.export = addComment
+module.exports = addComment

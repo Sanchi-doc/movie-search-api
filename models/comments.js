@@ -19,6 +19,11 @@ const commentsDbSchema = Schema({
         require: [true, 'rating is required'],
         min: 1,
         max: 10
+    },
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'user',
+        require: true
     }
 },
 {
