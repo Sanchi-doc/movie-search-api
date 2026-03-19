@@ -20,6 +20,10 @@ const commentsDbSchema = Schema({
         min: 1,
         max: 10
     },
+    email: {
+        type: String,
+        require: [true, 'email is required']
+    },
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'user',

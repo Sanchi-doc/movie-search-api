@@ -9,7 +9,7 @@ const {JoiCommentsSchema} = require('../models/comments')
 const commRouter = express.Router()
 
 commRouter.post('/', auth, validation(JoiCommentsSchema), controlWrap(addComment))
-commRouter.get('/', controlWrap(getComments))
+commRouter.get('/:id', controlWrap(getComments))
 commRouter.delete('/:id', auth, controlWrap(deleteComm))
 
 
