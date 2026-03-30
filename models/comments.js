@@ -40,7 +40,8 @@ const JoiCommentsSchema = Joi.object({
     id: Joi.number().required(),
     author: Joi.string().required(),
     comments: Joi.string().required(),
-    rating: Joi.number().min(1).max(10).required()
+    rating: Joi.number().min(1).max(10).required(),
+    email: Joi.string().email().required()
 })
 
 module.exports = {Comments, JoiCommentsSchema}
