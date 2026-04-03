@@ -8,7 +8,7 @@ const deleteComm = async (req,res) => {
     
 
     if(!commToDelete) {
-        throw customError(`Commets with id:${id} does not exist`)
+        throw customError(`Commets with id:${id} does not exist`, 404)
     }
 
     res.status(200).json({

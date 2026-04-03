@@ -3,7 +3,6 @@ const { Comments } = require('../../models/comments')
 const addComment = async (req, res) => {
    const {body} = req
    const {_id, email} = req.user
-   console.log(body,"2222212");
    
    const commentToAdd = await Comments.create({...body, owner: _id, email})
 
